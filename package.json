@@ -8,31 +8,27 @@
     "npm": "11"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "npm run assets && vite",
+    "build": "npm run assets && tsc && vite build",
     "test": "vitest",
     "lint": "eslint",
     "prettier": "prettier . --check",
     "prettier-fix": "prettier . --write",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "assets": "node scripts/copy-assets.mjs"
   },
   "overrides": {
     "uuid": "14.0.0",
     "brace-expansion": "5.0.12"
   },
   "dependencies": {
-    "@mdi/js": "^7.4.47",
-    "@mdi/react": "^1.6.1",
-    "@tldraw/core": "^1.23.2",
-    "@tldraw/tldraw": "^1.29.2",
-    "@tldraw/vec": "^1.9.2",
-    "@y-presence/client": "^2.0.1",
-    "browser-fs-access": "^0.38.0",
-    "lodash": "^4.18.1",
+    "@bigbluebutton/assets": "2.0.0-alpha.36",
+    "@bigbluebutton/tldraw": "2.0.0-alpha.36",
     "react": "^18.3.1",
-    "react-cookie": "^8.1.2",
     "react-dom": "^18.3.1",
-    "react-toastify": "^11.1.0",
+    "recharts": "2.15.1",
+    "styled-components": "^6.1.13",
+    "y-utility": "^0.1.4",
     "y-websocket": "^3.0.0",
     "yjs": "^13.6.31"
   },
@@ -43,7 +39,6 @@
     "@testing-library/jest-dom": "^7.0.0",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
-    "@types/lodash": "^4.17.24",
     "@types/node": "^24.12.2",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",

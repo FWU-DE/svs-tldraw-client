@@ -1,49 +1,62 @@
-## Tldraw Readme
+## Whiteboard der SVS
 
-This repository contains the source code for Tldraw, a collaborative drawing application built
-using React, Node.js.
+Zeichenoberfläche für das Whiteboard-Element der Schulcloud-Verbund-Software.
+Seit dieser Fassung auf dem **BigBlueButton-Fork von tldraw**
+([`@bigbluebutton/tldraw`](https://github.com/bigbluebutton/tldraw) 2.0.0-alpha.36,
+Apache-2.0) statt tldraw 1.29: dem letzten frei lizenzierten tldraw-Stand
+(19.12.2023) plus der Pflege durch BigBlueButton. Neuere tldraw-Versionen
+brauchen einen kostenpflichtigen Lizenzschlüssel.
 
-## Getting Started
+### Schnittstellen (unverändert zum v1-Client)
 
-To run Tldraw locally, please follow the instructions below:
+Nuxt-Client, Server, tldraw-server und Deployment bleiben unverändert:
 
-## Prerequisites
+- Seite `/tldraw?parentId=<Zeichen-Element-ID>`, Assets unter `/assets`
+- Konfiguration von `/api/tldraw/config/public`, Nutzer von `/api/v3/me`
+- Yjs über `TLDRAW_WEBSOCKET_URL/<parentId>`, Anmeldung per `jwt`-Cookie;
+  die Textnachricht `action:delete` und die Close-Codes des tldraw-servers
+  führen wie bisher zur `/error`-Seite des Nuxt-Clients
+- Bilder nach files-storage (`/api/v3/file/upload/school/…/boardnodes/<parentId>`)
 
-Node.js (version 18 or higher)
-Docker
+Neu ist nur das Dokumentformat: tldraw-2-Datensätze im Y.Array `tl_records`
+(`src/useYjsStore.ts`) statt der v1-Maps `shapes`/`bindings`/`assets`.
 
-## Installation
+### Umstellung alter Boards
 
-1.Clone the repository:
+`src/migration/`: Ein Board mit nur v1-Inhalt wird beim ersten Öffnen mit
+`buildFromV1Document` aus dem BBB-Fork umgewandelt. Öffnen mehrere Personen es
+gleichzeitig, wandelt nur eine um (Absprache über die Y.Map `meta`, verwaiste
+Absprachen verfallen nach 15 s). Die v1-Maps bleiben als Sicherung im Dokument,
+Bilder behalten ihre files-storage-Adresse. Testdaten:
+`src/migration/__fixtures__/bruchrechnen.json`, erzeugt mit der echten
+v1-Bibliothek (`generate.cjs` daneben).
 
-### git clone <repository-url>
+### Umfragen
 
-2.Navigate to the project directory:
+`src/poll/`: Werkzeug „Umfrage“ in der Leiste. Die Umfrage ist BigBlueButtons
+eigene Form `poll` mit unveränderten Feldern, damit Boards mit BBB kompatibel
+bleiben; die Abstimmleiste unter dem Diagramm wird ohne Fork ergänzt. Stimmen
+liegen pro Person in der Y.Map `svs_poll_votes`; die Auszählung kommt erst mit
+„Ergebnis veröffentlichen“ in die Felder der Form, wie in BBB.
 
-### cd tldraw-client
+### Datenschutz
 
-3.Install the dependencies:
+`src/editorSetup.ts`, ohne Fork der Bibliothek: keine Einbettungen fremder
+Seiten, keine Linkvorschau, die der Browser selbst lädt, Schriften, Icons und
+Übersetzungen vom eigenen Server (`scripts/copy-assets.mjs`); die CSP in
+`nginx.conf.template` erlaubt keine fremden Quellen und keine Frames.
 
-### npm install
+### Entwicklung
 
-## Development Mode
+```bash
+npm ci
+npm run dev      # http://localhost:3046/tldraw?parentId=… (Proxy auf lokale Dienste, vite.config.ts)
+npm test         # Vitest
+npm run lint
+npm run build
+docker build -t tldraw-client .
+```
 
-To run Tldraw in development mode, use the following command:
+### Lizenz
 
-### npm run dev
-
-This command will start the development server on [http://localhost:3046].
-
-## Running with Docker
-
-Tldraw can also be run using Docker. To build and run the Docker image, execute the following commands:
-
-### docker build -t tldraw-client .
-
-### docker run -p 83:83 tldraw-client
-
-The application will be accessible at [http://localhost:83].
-
-## License
-
-Tldraw is licensed under the AGPL-3.0 license. See the LICENSE file for more information.
+AGPL-3.0, siehe LICENSE.md. `@bigbluebutton/tldraw` steht unter Apache-2.0.

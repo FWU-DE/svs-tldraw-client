@@ -17,7 +17,14 @@ const compat = new FlatCompat({
 
 export default [
   {
-    ignores: ["**/dist/**/*.*", "eslint.config.mjs", ".prettierrc.cjs"],
+    ignores: [
+      "**/dist/**/*.*",
+      "eslint.config.mjs",
+      ".prettierrc.cjs",
+      // Node scripts outside the TypeScript project
+      "scripts/**",
+      "src/migration/__fixtures__/**",
+    ],
   },
   ...fixupConfigRules(
     compat.extends(

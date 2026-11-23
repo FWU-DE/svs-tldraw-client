@@ -41,12 +41,19 @@ export default defineConfig({
         changeOrigin: true,
         secure: false,
       },
+      "/tldraw-server": {
+        target: "ws://localhost:3345",
+        ws: true,
+      },
     },
   },
   test: {
     globals: true,
     environment: "jsdom",
     setupFiles: ["./src/__tests__/vitest.setup.ts"],
+    // The BBB packages import eventemitter3 in a way only a bundler resolves;
+    // let Vitest transform them like Vite does.
+    server: { deps: { inline: [/@bigbluebutton/] } },
   },
   preview: {
     port: 3046,

@@ -1,0 +1,378 @@
+{
+  "shapes": {
+    "title": {
+      "id": "title",
+      "type": "text",
+      "name": "Text",
+      "parentId": "page",
+      "childIndex": 1,
+      "point": [40, 20],
+      "rotation": 0,
+      "text": "Bruchrechnen",
+      "style": {
+        "color": "black",
+        "size": "large",
+        "isFilled": false,
+        "dash": "draw",
+        "scale": 1,
+        "font": "script",
+        "textAlign": "middle"
+      }
+    },
+    "ganzes": {
+      "id": "ganzes",
+      "type": "rectangle",
+      "name": "Rectangle",
+      "parentId": "page",
+      "childIndex": 1,
+      "point": [60, 140],
+      "size": [240, 120],
+      "rotation": 0,
+      "style": {
+        "color": "blue",
+        "size": "medium",
+        "isFilled": true,
+        "dash": "draw",
+        "scale": 1
+      },
+      "label": "Ein Ganzes",
+      "labelPoint": [0.5, 0.5]
+    },
+    "haelfte": {
+      "id": "haelfte",
+      "type": "ellipse",
+      "name": "Ellipse",
+      "parentId": "page",
+      "childIndex": 1,
+      "point": [460, 100],
+      "radius": [110, 60],
+      "rotation": 0,
+      "style": {
+        "color": "green",
+        "size": "medium",
+        "isFilled": false,
+        "dash": "draw",
+        "scale": 1
+      },
+      "label": "1/2",
+      "labelPoint": [0.5, 0.5]
+    },
+    "viertel": {
+      "id": "viertel",
+      "type": "triangle",
+      "name": "Triangle",
+      "parentId": "page",
+      "childIndex": 1,
+      "point": [480, 300],
+      "size": [180, 150],
+      "rotation": 0,
+      "style": {
+        "color": "orange",
+        "size": "medium",
+        "isFilled": false,
+        "dash": "dashed",
+        "scale": 1
+      },
+      "label": "1/4",
+      "labelPoint": [0.5, 0.5]
+    },
+    "merke": {
+      "id": "merke",
+      "type": "sticky",
+      "name": "Sticky",
+      "parentId": "page",
+      "childIndex": 1,
+      "point": [60, 340],
+      "size": [200, 200],
+      "text": "Merke: Nenner gleich machen, dann Zähler addieren!",
+      "rotation": 0,
+      "style": {
+        "color": "yellow",
+        "size": "medium",
+        "isFilled": false,
+        "dash": "draw",
+        "scale": 1,
+        "font": "script",
+        "textAlign": "middle"
+      }
+    },
+    "frage": {
+      "id": "frage",
+      "type": "sticky",
+      "name": "Sticky",
+      "parentId": "page",
+      "childIndex": 1,
+      "point": [760, 120],
+      "size": [200, 200],
+      "text": "Was ist 1/2 + 1/4?",
+      "rotation": 0,
+      "style": {
+        "color": "red",
+        "size": "medium",
+        "isFilled": false,
+        "dash": "draw",
+        "scale": 1,
+        "font": "script",
+        "textAlign": "middle"
+      }
+    },
+    "welle": {
+      "id": "welle",
+      "type": "draw",
+      "name": "Draw",
+      "parentId": "page",
+      "childIndex": 1,
+      "point": [300, 560],
+      "rotation": 0,
+      "style": {
+        "color": "violet",
+        "size": "medium",
+        "isFilled": false,
+        "dash": "draw",
+        "scale": 1
+      },
+      "points": [
+        [0, 20, 0.5],
+        [8, 24.453271266581414, 0.5],
+        [16, 28.629659694875656, 0.5],
+        [24, 32.26949768042002, 0.5],
+        [32, 35.14647772654214, 0.5],
+        [40, 37.081723148400556, 0.5],
+        [48, 37.95490975887298, 0.5],
+        [56, 37.71174704373087, 0.5],
+        [64, 36.36735368286227, 0.5],
+        [72, 34.005317543982585, 0.5],
+        [80, 30.772498593871216, 0.5],
+        [88, 26.869897856941968, 0.5],
+        [96, 22.54016014507761, 0.5],
+        [104, 18.05248757845805, 0.5],
+        [112, 13.685901901586842, 0.5],
+        [120, 9.711896262637813, 0.5],
+        [128, 6.377555084457292, 0.5],
+        [136, 3.890191551885497, 0.5],
+        [144, 2.404457882028254, 0.5],
+        [152, 2.012729798443196, 0.5],
+        [160, 2.7393630560635067, 0.5],
+        [168, 4.539179118321345, 0.5],
+        [176, 7.300274139732945, 0.5],
+        [184, 10.850976605013349, 0.5],
+        [192, 14.970521032419335, 0.5],
+        [200, 19.402774102143976, 0.5],
+        [208, 23.872159785580678, 0.5],
+        [216, 28.100793328051118, 0.5],
+        [224, 31.8257587769382, 0.5],
+        [232, 34.8154558222071, 0.5],
+        [240, 36.883999581945304, 0.5],
+        [248, 37.902778024001165, 0.5],
+        [256, 37.80844843922087, 0.5],
+        [264, 36.60687578430812, 0.5],
+        [272, 34.372768027222826, 0.5],
+        [280, 31.245031167575462, 0.5],
+        [288, 27.41813273435162, 0.5],
+        [296, 23.130010736847805, 0.5],
+        [304, 18.64727983168743, 0.5],
+        [312, 14.248654514799075, 0.5]
+      ],
+      "isComplete": true
+    },
+    "pfeil-1": {
+      "id": "pfeil-1",
+      "type": "arrow",
+      "name": "Arrow",
+      "parentId": "page",
+      "childIndex": 1,
+      "point": [300, 172.74],
+      "rotation": 0,
+      "bend": 0,
+      "handles": {
+        "start": {
+          "id": "start",
+          "index": 0,
+          "point": [0, 14.95],
+          "bindingId": "pfeil-1-start"
+        },
+        "end": {
+          "id": "end",
+          "index": 1,
+          "point": [145.78, 0],
+          "bindingId": "pfeil-1-end"
+        },
+        "bend": {
+          "id": "bend",
+          "index": 2,
+          "point": [72.89, 7.48]
+        }
+      },
+      "decorations": {
+        "end": "arrow"
+      },
+      "style": {
+        "color": "black",
+        "size": "medium",
+        "dash": "draw",
+        "isFilled": false,
+        "scale": 1
+      },
+      "label": "teilen",
+      "labelPoint": [0.5, 0.5]
+    },
+    "pfeil-2": {
+      "id": "pfeil-2",
+      "type": "arrow",
+      "name": "Arrow",
+      "parentId": "page",
+      "childIndex": 1,
+      "point": [570, 220],
+      "rotation": 0,
+      "bend": 0,
+      "handles": {
+        "start": {
+          "id": "start",
+          "index": 0,
+          "point": [0, 0],
+          "bindingId": "pfeil-2-start"
+        },
+        "end": {
+          "id": "end",
+          "index": 1,
+          "point": [0, 48.9],
+          "bindingId": "pfeil-2-end"
+        },
+        "bend": {
+          "id": "bend",
+          "index": 2,
+          "point": [0, 24.45]
+        }
+      },
+      "decorations": {
+        "end": "arrow"
+      },
+      "style": {
+        "color": "black",
+        "size": "medium",
+        "dash": "draw",
+        "isFilled": false,
+        "scale": 1
+      },
+      "label": "nochmal",
+      "labelPoint": [0.5, 0.5]
+    },
+    "legende-a": {
+      "id": "legende-a",
+      "type": "text",
+      "name": "Text",
+      "parentId": "legende",
+      "childIndex": 1,
+      "point": [760, 380],
+      "rotation": 0,
+      "text": "Zähler",
+      "style": {
+        "color": "gray",
+        "size": "small",
+        "isFilled": false,
+        "dash": "draw",
+        "scale": 1,
+        "font": "script",
+        "textAlign": "middle"
+      }
+    },
+    "legende-b": {
+      "id": "legende-b",
+      "type": "text",
+      "name": "Text",
+      "parentId": "legende",
+      "childIndex": 2,
+      "point": [760, 420],
+      "rotation": 0,
+      "text": "Nenner",
+      "style": {
+        "color": "gray",
+        "size": "small",
+        "isFilled": false,
+        "dash": "draw",
+        "scale": 1,
+        "font": "script",
+        "textAlign": "middle"
+      }
+    },
+    "legende": {
+      "id": "legende",
+      "type": "group",
+      "name": "Group",
+      "parentId": "page",
+      "childIndex": 1,
+      "point": [760, 380],
+      "size": [1, 41],
+      "rotation": 0,
+      "children": ["legende-a", "legende-b"],
+      "style": {
+        "color": "black",
+        "size": "small",
+        "isFilled": false,
+        "dash": "draw",
+        "scale": 1
+      }
+    },
+    "bild": {
+      "id": "bild",
+      "type": "image",
+      "name": "Image",
+      "parentId": "page",
+      "childIndex": 1,
+      "point": [760, 480],
+      "size": [240, 150],
+      "rotation": 0,
+      "style": {
+        "color": "black",
+        "size": "medium",
+        "isFilled": false,
+        "dash": "draw",
+        "scale": 1
+      },
+      "assetId": "bild-kuchen"
+    }
+  },
+  "bindings": {
+    "pfeil-1-start": {
+      "id": "pfeil-1-start",
+      "fromId": "pfeil-1",
+      "toId": "ganzes",
+      "handleId": "start",
+      "point": [0.5, 0.5],
+      "distance": 16
+    },
+    "pfeil-1-end": {
+      "id": "pfeil-1-end",
+      "fromId": "pfeil-1",
+      "toId": "haelfte",
+      "handleId": "end",
+      "point": [0.5, 0.5],
+      "distance": 16
+    },
+    "pfeil-2-start": {
+      "id": "pfeil-2-start",
+      "fromId": "pfeil-2",
+      "toId": "haelfte",
+      "handleId": "start",
+      "point": [0.5, 0.5],
+      "distance": 16
+    },
+    "pfeil-2-end": {
+      "id": "pfeil-2-end",
+      "fromId": "pfeil-2",
+      "toId": "viertel",
+      "handleId": "end",
+      "point": [0.5, 0.5],
+      "distance": 16
+    }
+  },
+  "assets": {
+    "bild-kuchen": {
+      "id": "bild-kuchen",
+      "type": "image",
+      "fileName": "kuchen.png",
+      "src": "__SEED_IMAGE_SRC__",
+      "size": [480, 300]
+    }
+  }
+}

@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# copied from @bigbluebutton/assets at build time (scripts/copy-assets.mjs)
+public/assets/tldraw
