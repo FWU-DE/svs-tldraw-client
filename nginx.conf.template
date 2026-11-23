@@ -2,7 +2,9 @@ server {
     listen 3046;
     server_name localhost;
 
-    set $csp "default-src 'self'; connect-src 'self' data:; base-uri 'self'; script-src 'nonce-$request_id' 'strict-dynamic' https:; object-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'self' 'unsafe-inline';";
+    # No third-party sources: fonts, icons and translations are served from
+    # /assets/tldraw; frame-src 'none' keeps any embed shape inert.
+    set $csp "default-src 'self'; connect-src 'self' wss: data: blob:; base-uri 'self'; script-src 'nonce-$request_id' 'strict-dynamic' https:; object-src 'none'; font-src 'self' data:; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; worker-src 'self' blob:; frame-src 'none';";
 
     location /assets {
         alias /usr/share/nginx/html/assets/;

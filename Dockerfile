@@ -10,6 +10,7 @@ RUN npm ci --ignore-scripts
 
 COPY LICENSE.md eslint.config.mjs .prettierrc.cjs vite.config.ts tsconfig.json tsconfig.node.json index.html ./
 COPY public ./public
+COPY scripts ./scripts
 COPY src ./src
 RUN NODE_ENV=production npm run build
 
@@ -20,7 +21,7 @@ RUN mkdir /etc/nginx/templates
 
 COPY nginx.conf.template /etc/nginx/templates/default.conf.template
 COPY --from=build-stage /app/dist /usr/share/nginx/html
-COPY --from=build-stage /app/dist/favicon.png /app/dist/tldraw-assets.json /usr/share/nginx/html/assets/
+COPY --from=build-stage /app/dist/favicon.png /usr/share/nginx/html/assets/
 
 EXPOSE 3046
 
